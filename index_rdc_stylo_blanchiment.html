@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<title>Stylo blanchissant — RDC</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topbar">🇨🇩 Livraison en RDC · Paiement à la livraison</div>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <span class="badge">✨ OFFRE DU MOMENT</span>
+    <h1>Un sourire plus blanc, simplement</h1>
+    <p>Stylo blanchissant dentaire, pratique et discret, à utiliser facilement au quotidien.</p>
+    <div class="price" id="heroPrice">$35</div>
+    <div class="stock">● Stock limité disponible</div>
+    <a class="cta" href="#commande">COMMANDER MAINTENANT →</a>
+    <div class="trust">✓ Paiement à la livraison &nbsp; · &nbsp; ✓ Commande rapide</div>
+  </div>
+  <div class="hero-image">
+    <img src="stylo-blanchiment.png" alt="Stylo blanchissant pour les dents">
+  </div>
+</section>
+
+<section class="benefits">
+  <div><b>✓ Sourire plus éclatant</b><small>Une solution pratique pour raviver l’éclat du sourire.</small></div>
+  <div><b>✓ Application précise</b><small>Son embout facilite une application ciblée.</small></div>
+  <div><b>✓ Compact & discret</b><small>Facile à emporter partout avec vous.</small></div>
+</section>
+
+<section class="offers">
+  <h2>Choisissez votre offre</h2>
+  <div class="plans">
+    <button class="plan selected" data-qty="1"><b>1 PIÈCE</b><strong>$35</strong></button>
+    <button class="plan popular" data-qty="2"><span>POPULAIRE</span><b>2 PIÈCES</b><strong>$52</strong></button>
+    <button class="plan" data-qty="3"><b>3 PIÈCES</b><strong>$63</strong></button>
+  </div>
+</section>
+
+<section class="order" id="commande">
+  <h2>Commandez maintenant</h2>
+  <p class="muted">Remplissez vos coordonnées. Vous payez à la livraison.</p>
+
+  <form id="orderForm" novalidate>
+    <input class="honeypot" type="text" id="website" autocomplete="off" tabindex="-1" aria-hidden="true">
+
+    <div class="chosen">
+      <span>Votre offre</span>
+      <b id="selectedOffer">1 pièce — $35</b>
+    </div>
+
+    <label>Prénom et nom *
+      <input id="name" autocomplete="name" placeholder="Ex. Jean Kabasele" required>
+      <small class="error"></small>
+    </label>
+
+    <label>Téléphone *
+      <input id="phone" autocomplete="tel" inputmode="tel" placeholder="08X XXX XXX" required>
+      <small class="error"></small>
+    </label>
+
+    <label>Ville / Région *
+      <input id="city" autocomplete="address-level2" placeholder="Kinshasa, Lubumbashi..." required>
+      <small class="error"></small>
+    </label>
+
+    <label>Adresse / Quartier *
+      <input id="address" autocomplete="street-address" placeholder="Quartier, avenue, repère..." required>
+      <small class="error"></small>
+    </label>
+
+    <label>Indication <span>(facultatif)</span>
+      <textarea id="note" rows="2" placeholder="Près de, référence, précision..."></textarea>
+    </label>
+
+    <button class="submit" type="submit">CONFIRMER MA COMMANDE — <span id="submitPrice">$35</span></button>
+    <small class="payment">🔒 Paiement à la livraison</small>
+    <div id="sendStatus" class="send-status" aria-live="polite"></div>
+  </form>
+
+  <div class="summary">
+    <div><span>Offre</span><b id="summaryQty">1 pièce</b></div>
+    <div><span>Total</span><strong id="totalPrice">$35</strong></div>
+  </div>
+</section>
+</main>
+
+<div class="sticky">
+  <b id="stickyPrice">$35</b>
+  <a href="#commande">COMMANDER</a>
+</div>
+
+<div class="modal" id="successModal" role="dialog" aria-modal="true">
+  <div class="card">
+    <div class="ok">✓</div>
+    <h2>Commande reçue !</h2>
+    <p>Merci <b id="customerName"></b>.</p>
+    <p>Votre commande a été transmise.</p>
+    <p class="order-number">Référence : <b id="orderId"></b></p>
+    <p>Total : <b id="confirmedTotal"></b></p>
+    <button class="submit" id="closeModal">FERMER</button>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const offers = {
+    1: "$35",
+    2: "$52",
+    3: "$63"
+  };
+
+  const plans = document.querySelectorAll(".plan");
+  const selectedOffer = document.getElementById("selectedOffer");
+  const submitPrice = document.getElementById("submitPrice");
+  const totalPrice = document.getElementById("totalPrice");
+  const stickyPrice = document.getElementById("stickyPrice");
+  const heroPrice = document.getElementById("heroPrice");
+  const summaryQty = document.getElementById("summaryQty");
+
+  function selectOffer(qty) {
+    const price = offers[qty];
+
+    plans.forEach(p => p.classList.toggle("selected", Number(p.dataset.qty) === qty));
+    selectedOffer.textContent = `${qty} pièce${qty > 1 ? "s" : ""} — ${price}`;
+    submitPrice.textContent = price;
+    totalPrice.textContent = price;
+    stickyPrice.textContent = price;
+    heroPrice.textContent = price;
+    summaryQty.textContent = `${qty} pièce${qty > 1 ? "s" : ""}`;
+  }
+
+  plans.forEach(plan => {
+    plan.addEventListener("click", () => selectOffer(Number(plan.dataset.qty)));
+  });
+
+  selectOffer(1);
+});
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
