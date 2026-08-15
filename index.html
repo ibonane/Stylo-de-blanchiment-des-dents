@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#111111">
-<title>Stylo blanchissant — RDC</title>
+<title>LUNOON Teeth Whitening Essence — Stylo blanchissant | Livraison RDC</title>
+<meta name="description" content="LUNOON Teeth Whitening Essence, stylo blanchissant dentaire compact. Livraison en RDC, paiement à la livraison.">
 <link rel="stylesheet" href="style.css">
 
   <!-- Meta Pixel Code -->
@@ -24,44 +25,352 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1963733684341871&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
+<!--
+  Styles additionnels pour les nouvelles sections de la landing page.
+  Ce bloc n'écrase aucune classe de style.css : il n'ajoute que des
+  classes propres aux nouvelles sections (lp-*) pour ne rien casser
+  du design/CSS existant. À terme, ce bloc peut être déplacé dans
+  style.css si souhaité.
+-->
+<style>
+  :root{
+    --lp-ink:#1f2a24;
+    --lp-teal:#2f6f62;
+    --lp-teal-dark:#204d43;
+    --lp-coral:#e0637a;
+    --lp-gold:#b8902c;
+    --lp-cream:#fbf8f4;
+    --lp-line:#e7e1d6;
+  }
+  .lp-section{ padding:64px 20px; max-width:1080px; margin:0 auto; }
+  .lp-section + .lp-section{ border-top:1px solid var(--lp-line); }
+  .lp-eyebrow{
+    display:inline-block; font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--lp-teal-dark); font-weight:700; margin-bottom:10px;
+  }
+  .lp-h2{ font-size:clamp(22px,4vw,32px); line-height:1.2; margin:0 0 12px; color:var(--lp-ink); }
+  .lp-lede{ color:#4b564f; max-width:64ch; margin:0 0 32px; line-height:1.55; }
+
+  /* Pourquoi LUNOON */
+  .lp-why-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  @media (min-width:760px){ .lp-why-grid{ grid-template-columns:repeat(4,1fr); } }
+  .lp-why-card{
+    background:var(--lp-cream); border:1px solid var(--lp-line); border-radius:14px;
+    padding:20px 16px; text-align:left;
+  }
+  .lp-why-icon{ font-size:22px; margin-bottom:10px; display:block; }
+  .lp-why-card b{ display:block; color:var(--lp-ink); margin-bottom:6px; font-size:15px; }
+  .lp-why-card p{ margin:0; font-size:13.5px; color:#5b665e; line-height:1.5; }
+
+  /* Présentation produit */
+  .lp-product{ display:grid; gap:28px; align-items:center; }
+  @media (min-width:760px){ .lp-product{ grid-template-columns:1fr 1fr; } }
+  .lp-product-media{
+    background:var(--lp-cream); border:1px solid var(--lp-line); border-radius:18px;
+    overflow:hidden; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center;
+  }
+  .lp-product-media img{ width:100%; height:100%; object-fit:cover; }
+  .lp-product-list{ list-style:none; margin:20px 0 0; padding:0; display:grid; gap:12px; }
+  .lp-product-list li{ display:flex; gap:10px; font-size:14.5px; color:#3a453d; line-height:1.5; }
+  .lp-product-list li::before{ content:"✓"; color:var(--lp-teal); font-weight:700; flex:none; }
+
+  /* Comment ça marche */
+  .lp-steps{ display:grid; gap:18px; }
+  @media (min-width:760px){ .lp-steps{ grid-template-columns:repeat(3,1fr); } }
+  .lp-step{ position:relative; padding:22px 18px; border:1px solid var(--lp-line); border-radius:14px; background:#fff; }
+  .lp-step-num{
+    font-size:12px; font-weight:800; letter-spacing:.06em; color:#fff; background:var(--lp-teal);
+    display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:50%;
+    margin-bottom:12px;
+  }
+  .lp-step b{ display:block; margin-bottom:6px; color:var(--lp-ink); font-size:15px; }
+  .lp-step p{ margin:0; font-size:13.5px; color:#5b665e; line-height:1.5; }
+
+  /* Réassurance / process de commande */
+  .lp-flow{ display:flex; flex-wrap:wrap; align-items:stretch; gap:10px; justify-content:center; }
+  .lp-flow-step{
+    flex:1 1 200px; background:#fff; border:1px solid var(--lp-line); border-radius:12px;
+    padding:16px; text-align:center; font-size:13.5px; color:#3a453d; display:flex; align-items:center; justify-content:center;
+  }
+  .lp-flow-arrow{ display:flex; align-items:center; justify-content:center; color:var(--lp-teal); font-weight:700; }
+  .lp-cod-banner{
+    margin-top:22px; text-align:center; background:var(--lp-teal); color:#fff; border-radius:14px;
+    padding:16px 20px; font-weight:700; letter-spacing:.02em; font-size:15px;
+  }
+
+  /* Livraison */
+  .lp-delivery-box{
+    background:var(--lp-cream); border:1px solid var(--lp-line); border-radius:16px; padding:26px 22px;
+  }
+  .lp-delivery-list{ list-style:none; margin:16px 0 0; padding:0; display:grid; gap:10px; }
+  .lp-delivery-list li{ font-size:14.5px; color:#3a453d; display:flex; gap:10px; }
+  .lp-delivery-list li::before{ content:"✓"; color:var(--lp-teal); font-weight:700; flex:none; }
+
+  /* FAQ */
+  .lp-faq{ display:grid; gap:10px; }
+  .lp-faq details{
+    border:1px solid var(--lp-line); border-radius:12px; padding:14px 16px; background:#fff;
+  }
+  .lp-faq summary{
+    cursor:pointer; font-weight:700; font-size:14.5px; color:var(--lp-ink); list-style:none;
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+  }
+  .lp-faq summary::-webkit-details-marker{ display:none; }
+  .lp-faq summary::after{ content:"+"; font-size:18px; color:var(--lp-teal); flex:none; }
+  .lp-faq details[open] summary::after{ content:"–"; }
+  .lp-faq p{ margin:10px 0 0; font-size:13.5px; color:#5b665e; line-height:1.55; }
+
+  .lp-order-lede{ color:#4b564f; margin:0 0 24px; }
+
+  /* Sélecteur d'offres en 2 étapes visuelles */
+  .lp-offers-step{ font-size:12px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--lp-teal-dark); margin:26px 0 14px; }
+  .lp-offers-step:first-of-type{ margin-top:0; }
+  .lp-offer-thumbs{ display:flex; gap:6px; justify-content:center; margin-bottom:10px; }
+  .lp-offer-thumbs img{
+    width:34px; height:34px; object-fit:contain; background:#fff; border:1px solid var(--lp-line);
+    border-radius:8px; padding:3px;
+  }
+
+  /* Bloc réassurance en icônes */
+  .lp-trust-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; text-align:center; }
+  @media (min-width:640px){ .lp-trust-grid{ grid-template-columns:repeat(3,1fr); } }
+  .lp-trust-item{ display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .lp-trust-icon{ font-size:24px; }
+  .lp-trust-item span.lp-trust-label{ font-size:13px; font-weight:600; color:var(--lp-ink); line-height:1.3; }
+
+  /* Drapeau RDC en image : le rendu emoji des drapeaux n'est pas fiable
+     sur tous les OS/navigateurs (ex. Windows), on utilise donc une image. */
+  .lp-flag{
+    display:inline-block; width:1.1em; height:0.8em; vertical-align:-0.05em;
+    background-image:url('https://flagcdn.com/w40/cd.png');
+    background-size:cover; background-position:center; border-radius:2px;
+  }
+</style>
 </head>
 <body>
-<div class="topbar">🇨🇩 Livraison en RDC · Paiement à la livraison</div>
+<div class="topbar"><span class="lp-flag" role="img" aria-label="RDC"></span> Livraison en RDC · Paiement à la livraison</div>
 
 <main>
+<!-- 1. HERO -->
 <section class="hero">
   <div class="hero-copy">
-    <span class="badge">✨ OFFRE DU MOMENT</span>
-    <h1>Un sourire plus blanc, simplement</h1>
-    <p>Stylo blanchissant dentaire, pratique et discret, à utiliser facilement au quotidien.</p>
+    <span class="badge">✨ OFFRE DE LANCEMENT</span>
+    <h1>Le stylo blanchissant pour un sourire plus éclatant ✨</h1>
+    <p>LUNOON Teeth Whitening Essence est un stylo blanchissant pratique conçu pour une application ciblée sur les dents. Son format compact permet de l'intégrer facilement à votre routine quotidienne.</p>
     <div class="price" id="heroPrice">$35</div>
     <div class="stock">● Stock limité disponible</div>
     <a class="cta" href="#commande">COMMANDER MAINTENANT →</a>
-    <div class="trust">✓ Paiement à la livraison &nbsp; · &nbsp; ✓ Commande rapide</div>
+    <div class="trust">✓ Paiement à la livraison &nbsp;·&nbsp; ✓ Commande rapide &nbsp;·&nbsp; ✓ Livraison en RDC</div>
   </div>
   <div class="hero-image">
-    <img src="stylo-blanchiment.png" alt="Stylo blanchissant pour les dents">
+    <!-- Image existante conservée. Idéalement : photo d'une femme congolaise utilisant/présentant le produit -->
+    <img src="stylo-blanchiment.png" alt="Stylo blanchissant LUNOON Teeth Whitening Essence">
   </div>
 </section>
 
-<section class="benefits">
-  <div><b>✓ Sourire plus éclatant</b><small>Une solution pratique pour raviver l’éclat du sourire.</small></div>
-  <div><b>✓ Application précise</b><small>Son embout facilite une application ciblée.</small></div>
-  <div><b>✓ Compact & discret</b><small>Facile à emporter partout avec vous.</small></div>
+<!-- 3. POURQUOI CHOISIR LUNOON (avantages principaux) -->
+<section class="lp-section" aria-labelledby="lp-why-h2">
+  <span class="lp-eyebrow">Pourquoi LUNOON</span>
+  <h2 class="lp-h2" id="lp-why-h2">Pourquoi choisir LUNOON ?</h2>
+  <p class="lp-lede">Un produit simple, pensé pour s'intégrer facilement à votre routine de soin du sourire.</p>
+  <div class="lp-why-grid">
+    <div class="lp-why-card">
+      <span class="lp-why-icon">✨</span>
+      <b>Un sourire plus éclatant</b>
+      <p>Une solution pratique pour accompagner votre routine de soin du sourire.</p>
+    </div>
+    <div class="lp-why-card">
+      <span class="lp-why-icon">🖌️</span>
+      <b>Application ciblée</b>
+      <p>L'embout permet une application précise sur les dents.</p>
+    </div>
+    <div class="lp-why-card">
+      <span class="lp-why-icon">🎒</span>
+      <b>Format compact</b>
+      <p>Facile à transporter et à intégrer à votre routine.</p>
+    </div>
+    <div class="lp-why-card">
+      <span class="lp-why-icon">⏱️</span>
+      <b>Simple à utiliser</b>
+      <p>Une utilisation pratique, sans routine compliquée.</p>
+    </div>
+  </div>
 </section>
 
+<!-- 4. PRÉSENTATION DU PRODUIT -->
+<section class="lp-section" aria-labelledby="lp-product-h2">
+  <span class="lp-eyebrow">Le produit</span>
+  <h2 class="lp-h2" id="lp-product-h2">Découvrez LUNOON Teeth Whitening Essence</h2>
+  <div class="lp-product">
+    <div class="lp-product-media">
+      <!-- AJOUTER ICI : photo du produit seul -->
+      <img src="produit-detail.png" alt="LUNOON Teeth Whitening Essence, stylo blanchissant seul" loading="lazy">
+    </div>
+    <div>
+      <p class="lp-lede" style="margin-bottom:0;">LUNOON Teeth Whitening Essence se présente sous la forme d'un stylo, au format compact, muni d'un embout applicateur pour cibler précisément les dents. Voici ce que vous recevez :</p>
+      <ul class="lp-product-list">
+        <li>Un stylo blanchissant au format de poche, facile à ranger dans un sac ou une trousse.</li>
+        <li>Un embout applicateur pensé pour une application ciblée, dent par dent.</li>
+        <li>Un produit à utiliser selon les instructions fournies sur l'emballage.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 5. COMMENT ÇA MARCHE -->
+<section class="lp-section" aria-labelledby="lp-steps-h2">
+  <span class="lp-eyebrow">Utilisation</span>
+  <h2 class="lp-h2" id="lp-steps-h2">Comment utiliser votre stylo ?</h2>
+  <p class="lp-lede">Une utilisation simple, en trois étapes.</p>
+  <div class="lp-steps">
+    <div class="lp-step">
+      <span class="lp-step-num">01</span>
+      <b>Préparez</b>
+      <p>Nettoyez vos dents avant l'application.</p>
+    </div>
+    <div class="lp-step">
+      <span class="lp-step-num">02</span>
+      <b>Appliquez</b>
+      <p>Appliquez le produit directement sur les dents à l'aide de l'embout.</p>
+    </div>
+    <div class="lp-step">
+      <span class="lp-step-num">03</span>
+      <b>Suivez les indications</b>
+      <p>Respectez les instructions d'utilisation fournies avec le produit.</p>
+    </div>
+  </div>
+  <!-- AJOUTER ICI : photo/illustration de la démonstration d'application, ex. application-produit.png -->
+</section>
+
+<!-- (repris depuis la version existante, contenu enrichi ci-dessus dans "Pourquoi choisir LUNOON") -->
+<section class="benefits" hidden>
+  <div><b>✓ Sourire plus éclatant</b><small>Une solution pratique pour raviver l'éclat du sourire.</small></div>
+  <div><b>✓ Application précise</b><small>Son embout facilite une application ciblée.</small></div>
+  <div><b>✓ Compact &amp; discret</b><small>Facile à emporter partout avec vous.</small></div>
+</section>
+
+<!-- 6. OFFRES ET PACKS -->
 <section class="offers">
   <h2>Choisissez votre offre</h2>
+  <!-- AJOUTER ICI : photo des packs 1 / 2 / 3, ex. packs-produit.png -->
+  <p class="lp-offers-step">1. Combien de stylos souhaitez-vous ?</p>
   <div class="plans">
-    <button class="plan selected" data-qty="1"><b>1 PIÈCE</b><strong>$35</strong></button>
-    <button class="plan popular" data-qty="2"><span>POPULAIRE</span><b>2 PIÈCES</b><strong>$52</strong></button>
-    <button class="plan" data-qty="3"><b>3 PIÈCES</b><strong>$63</strong></button>
+    <button class="plan selected" data-qty="1">
+      <div class="lp-offer-thumbs">
+        <img src="stylo-blanchiment.png" alt="" aria-hidden="true">
+      </div>
+      <b>1 STYLO</b>
+      <strong>$35</strong>
+      <small>Pour découvrir le produit</small>
+    </button>
+    <button class="plan popular" data-qty="2">
+      <span>🔥 POPULAIRE</span>
+      <div class="lp-offer-thumbs">
+        <img src="stylo-blanchiment.png" alt="" aria-hidden="true">
+        <img src="stylo-blanchiment.png" alt="" aria-hidden="true">
+      </div>
+      <b>2 STYLOS</b>
+      <strong>$52</strong>
+      <small>$26 / stylo · Économisez $18</small>
+    </button>
+    <button class="plan" data-qty="3">
+      <span>⭐ MEILLEURE OFFRE</span>
+      <div class="lp-offer-thumbs">
+        <img src="stylo-blanchiment.png" alt="" aria-hidden="true">
+        <img src="stylo-blanchiment.png" alt="" aria-hidden="true">
+        <img src="stylo-blanchiment.png" alt="" aria-hidden="true">
+      </div>
+      <b>3 STYLOS</b>
+      <strong>$63</strong>
+      <small>$21 / stylo · Économisez $42</small>
+    </button>
+  </div>
+  <p class="lp-offers-step">2. Votre offre sélectionnée</p>
+  <div class="chosen" style="max-width:420px; margin:0 auto;">
+    <span>Vous recevrez</span>
+    <b id="offersSummary">1 pièce — $35</b>
   </div>
 </section>
 
+<!-- Bloc réassurance en icônes -->
+<section class="lp-section" aria-label="Nos engagements">
+  <div class="lp-trust-grid">
+    <div class="lp-trust-item"><span class="lp-trust-icon">🚚</span><span class="lp-trust-label">Livraison en RDC</span></div>
+    <div class="lp-trust-item"><span class="lp-trust-icon">🔒</span><span class="lp-trust-label">Paiement à la livraison</span></div>
+    <div class="lp-trust-item"><span class="lp-trust-icon">📞</span><span class="lp-trust-label">Confirmation par téléphone</span></div>
+    <div class="lp-trust-item"><span class="lp-trust-icon">📦</span><span class="lp-trust-label">Commande simple et rapide</span></div>
+    <div class="lp-trust-item"><span class="lp-trust-icon">💬</span><span class="lp-trust-label">Service client réactif</span></div>
+    <div class="lp-trust-item"><span class="lp-trust-icon">🎯</span><span class="lp-trust-label">Application ciblée et précise</span></div>
+  </div>
+</section>
+
+<!-- 7. RÉASSURANCE / PAIEMENT À LA LIVRAISON -->
+<section class="lp-section" aria-labelledby="lp-cod-h2">
+  <span class="lp-eyebrow">Comment ça se passe</span>
+  <h2 class="lp-h2" id="lp-cod-h2">Commandez en toute simplicité <span class="lp-flag" role="img" aria-label="RDC"></span></h2>
+  <div class="lp-flow">
+    <div class="lp-flow-step">1. Passez votre commande</div>
+    <div class="lp-flow-arrow">↓</div>
+    <div class="lp-flow-step">2. Nous vous contactons pour confirmation</div>
+    <div class="lp-flow-arrow">↓</div>
+    <div class="lp-flow-step">3. Votre commande est livrée</div>
+    <div class="lp-flow-arrow">↓</div>
+    <div class="lp-flow-step">4. Vous payez à la réception</div>
+  </div>
+  <div class="lp-cod-banner">PAIEMENT À LA LIVRAISON</div>
+</section>
+
+<!-- 8. LIVRAISON EN RDC -->
+<section class="lp-section" aria-labelledby="lp-delivery-h2">
+  <span class="lp-eyebrow">Livraison</span>
+  <h2 class="lp-h2" id="lp-delivery-h2"><span class="lp-flag" role="img" aria-label="RDC"></span> Livraison en RDC</h2>
+  <div class="lp-delivery-box">
+    <p style="margin:0; color:#3a453d;">Commandez en ligne et recevez votre produit à l'adresse indiquée lors de votre commande.</p>
+    <ul class="lp-delivery-list">
+      <li>Paiement à la livraison</li>
+      <li>Confirmation de la commande</li>
+      <li>Livraison selon votre zone — les modalités précises vous sont confirmées après validation de votre commande</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 11. FAQ -->
+<section class="lp-section" aria-labelledby="lp-faq-h2">
+  <span class="lp-eyebrow">Questions fréquentes</span>
+  <h2 class="lp-h2" id="lp-faq-h2">Questions fréquentes</h2>
+  <div class="lp-faq">
+    <details>
+      <summary>Comment utiliser le stylo ?</summary>
+      <p>Nettoyez vos dents, appliquez le produit à l'aide de l'embout, puis suivez les instructions d'utilisation fournies avec le produit.</p>
+    </details>
+    <details>
+      <summary>Quand dois-je payer ?</summary>
+      <p>Vous payez à la livraison.</p>
+    </details>
+    <details>
+      <summary>Comment se passe la commande ?</summary>
+      <p>Vous remplissez le formulaire, nous confirmons votre commande puis elle est préparée pour livraison.</p>
+    </details>
+    <details>
+      <summary>Où livrez-vous ?</summary>
+      <p>Nous livrons en RDC. La zone exacte et les modalités sont confirmées avec vous après validation de votre commande.</p>
+    </details>
+    <details>
+      <summary>Combien coûte la livraison ?</summary>
+      <p>Le coût de la livraison vous est communiqué lors de la confirmation de votre commande. <!-- À COMPLÉTER si un tarif fixe doit être affiché --></p>
+    </details>
+    <details>
+      <summary>Combien de stylos dois-je commander ?</summary>
+      <p>Trois offres sont disponibles : 1 stylo à $35 pour découvrir le produit, 2 stylos à $52 ($26/stylo) ou 3 stylos à $63 ($21/stylo) pour un prix par unité plus avantageux.</p>
+    </details>
+  </div>
+</section>
+
+<!-- 12. FORMULAIRE DE COMMANDE (logique JS inchangée) -->
 <section class="order" id="commande">
   <h2>Commandez maintenant</h2>
-  <p class="muted">Remplissez vos coordonnées. Vous payez à la livraison.</p>
+  <p class="muted lp-order-lede">Choisissez votre offre et renseignez vos coordonnées. Vous payez à la livraison.</p>
 
   <form id="orderForm" novalidate>
     <input class="honeypot" type="text" id="website" autocomplete="off" tabindex="-1" aria-hidden="true">
@@ -140,6 +449,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const stickyPrice = document.getElementById("stickyPrice");
   const heroPrice = document.getElementById("heroPrice");
   const summaryQty = document.getElementById("summaryQty");
+  const offersSummary = document.getElementById("offersSummary");
 
   function selectOffer(qty) {
     const price = offers[qty];
@@ -151,6 +461,7 @@ document.addEventListener("DOMContentLoaded", function () {
     stickyPrice.textContent = price;
     heroPrice.textContent = price;
     summaryQty.textContent = `${qty} pièce${qty > 1 ? "s" : ""}`;
+    if (offersSummary) offersSummary.textContent = `${qty} pièce${qty > 1 ? "s" : ""} — ${price}`;
   }
 
   plans.forEach(plan => {
