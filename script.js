@@ -1,11 +1,11 @@
 const PRODUCT = {
-  name: "Ceinture correctrice de posture",
+  name: "Stylo de blanchiment des dents",
   stock: 33,
   deliveryFee: 0,
   offers: [
-    { qty: 1, price: 20900, label: "1 pièce" },
-    { qty: 2, price: 29900, label: "2 pièces" },
-    { qty: 3, price: 36900, label: "3 pièces" }
+    { qty: 1, price: 35, label: "1 pièce" },
+    { qty: 2, price: 52, label: "2 pièces" },
+    { qty: 3, price: 63, label: "3 pièces" }
   ]
 };
 
@@ -18,15 +18,15 @@ let selected = PRODUCT.offers[0];
 let sending = false;
 
 const $ = id => document.getElementById(id);
-const money = n => `${Number(n).toLocaleString("fr-FR")} FCFA`;
+const money = n => `${Number(n).toLocaleString("fr-FR")} $`;
 
 function updateUI() {
   $("heroPrice").textContent = money(selected.price);
   $("selectedOffer").textContent = `${selected.label} — ${money(selected.price)}`;
   $("summaryQty").textContent = selected.label;
   $("totalPrice").textContent = money(selected.price + PRODUCT.deliveryFee);
-  $("submitPrice").textContent = money(selected.price + PRODUCT.deliveryFee).replace(" FCFA", " F");
-  $("stickyPrice").textContent = money(selected.price + PRODUCT.deliveryFee).replace(" FCFA", " F");
+  $("submitPrice").textContent = money(selected.price + PRODUCT.deliveryFee);
+  $("stickyPrice").textContent = money(selected.price + PRODUCT.deliveryFee);
 
   document.querySelectorAll(".plan").forEach(btn => {
     btn.classList.toggle("selected", Number(btn.dataset.qty) === selected.qty);
